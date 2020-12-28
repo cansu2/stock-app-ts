@@ -9,13 +9,13 @@ function App() {
 
   const [stockSymbol, setStockSymbol] = useState('');
 
-  const stockState = useSelector((state: RootStore) => state.stock);
+  const stockState = useSelector((state: RootStore) => state.stock.stock);
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => setStockSymbol(event.target.value);
 
   const handleSubmit = () => dispatch(getStock(stockSymbol));
 
-  console.log('STOCK STATE:' + stockState)
+  console.log('STOCK STATE:' + JSON.stringify(stockState));
 
   return (
     <div className="App">
